@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librarian Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Library System</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="logout.html">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Welcome, Librarian</h1>
+
+        <!-- Add Category Section -->
+        <h2>Manage Book Categories</h2>
+        <form id="categoryForm">
+            <div class="form-group">
+                <label for="categoryInput">Add Book Category:</label>
+                <input type="text" id="categoryInput" class="form-control" placeholder="Enter Category" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Category</button>
+        </form>
+
+        <h3>Category List</h3>
+        <ul id="categoryList">
+            <!-- Category list will populate here -->
+        </ul>
+
+        <!-- Manage Books Section -->
+        <h2>Manage Books</h2>
+        <form id="bookForm">
+            <div class="form-group">
+                <label for="bookTitle">Book Title:</label>
+                <input type="text" id="bookTitle" class="form-control" placeholder="Enter Book Title" required>
+            </div>
+            <div class="form-group">
+                <label for="categorySelect">Select Category:</label>
+                <select id="categorySelect" class="form-control" required>
+                    <!-- Dynamically populate categories here -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="bookCount">Count:</label>
+                <input type="number" id="bookCount" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="bookUrl">Book URL:</label>
+                <input type="text" id="bookUrl" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Book</button>
+        </form>
+
+        <h2>Book List</h2>
+        <table id="bookTable" class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Count</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Book list goes here -->
+            </tbody>
+        </table>
+
+        <h2>Borrow Book History</h2>
+        <table id="borrowedBooksTable" class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Borrow Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Borrowed books will populate here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/librarian.js"></script>
+</body>
+</html>
